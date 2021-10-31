@@ -16,39 +16,39 @@
         <div class="form">
 
             
-            <form action="" id="form1">
+            <form action="" id="form-1">
                 <h2 class="form-heading">Sign up</h2>
                 
                 <div class="form-group">
                     <div class="form-input">
                         <i class="fas fa-user"></i>
-                        <input type="text" name="name" placeholder="Your name">
+                        <input type="text" name="name" id="name" placeholder="Your name">
                     </div>
-                    <label for="name" class="error">Vui lòng nhập đầy đủ thông tin!</label>
+                    <label for="name" class="message-error"></label>
                 </div>
                 
                 <div class="form-group">
                     <div class="form-input">
                         <i class="fas fa-envelope"></i>
-                        <input type="text" name="email" placeholder="Your email">
+                        <input type="email" id="email" name="email" placeholder="Your email">
                     </div>
-                    <label for="email" class="error"></label>
+                    <label for="email" class="message-error"></label>
                 </div>
                 
                 <div class="form-group">
                     <div class="form-input">
                         <i class="fas fa-lock"></i>
-                        <input type="password" name="password" placeholder="Password">
+                        <input type="password" id="password" name="password" placeholder="Password">
                     </div>
-                    <label for="password" class="error"></label>
+                    <label for="password" class="message-error"></label>
                 </div>
                 
                 <div class="form-group">
                     <div class="form-input">
                         <i class="fas fa-lock"></i>
-                        <input type="password" name="rppassword" placeholder="Repeat your password">
+                        <input type="password" id="rppassword" name="rppassword" placeholder="Repeat your password">
                     </div>
-                    <label for="rppassword" class="error"></label>
+                    <label for="rppassword" class="message-error"></label>
                 </div>
         
                 <div class="form-group service">
@@ -67,5 +67,16 @@
     </div>
     
     <script src = "main.js"></script>
+    <script>
+        Validator({
+            form: '#form-1',
+            errorSelector: '.message-error',
+            rules:[
+                Validator.isRequired('#name'),
+                Validator.isEmail('#email'),
+                Validator.minLength('#password',8),
+            ]
+        })
+    </script>
 </body>
 </html>

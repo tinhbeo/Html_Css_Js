@@ -45,6 +45,7 @@ body{
 }
 .form-input{
     position: relative;
+    border-bottom: 1px solid #999;
 }
 
 .form-input i {
@@ -58,7 +59,6 @@ body{
 .form-input input[type = password] {
     border: none;
     outline: none;
-    border-bottom: 1px solid #999;
     font-size: 14px;
     width: 100%;
     color: #222;
@@ -82,8 +82,9 @@ span{
     border: none;
 }
 
-.error{
-    display: none;
+.message-error{
+    display: block;
+    margin-top: 0.5rem;
     color: #ff3333;
     font-size:14px;
 }
@@ -106,6 +107,7 @@ span{
     color: #ff3333;
     border-bottom: 1px solid #ff3333;
 }
+
 .image{
     width: 50%;
     display: flex;
