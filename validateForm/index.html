@@ -75,6 +75,9 @@
                 Validator.isRequired('#name'),
                 Validator.isEmail('#email'),
                 Validator.minLength('#password',8),
+                Validator.isConfirm('#rppassword',function(){
+                    return document.querySelector('#password').value;
+                })
             ]
         })
     </script>
